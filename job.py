@@ -57,3 +57,12 @@ class Job:
         self.is_running = False
         self.coro = None
         logger.info(f"Job stopped: {self.action.__name__}")
+
+    def to_dict(self):
+        return {
+            "action": self.action.__name__,
+            "start_at": self.start_at,
+            "max_working_time": self.max_working_time,
+            "tries": self.tries,
+            "completed": self.is_completed(),
+        }
