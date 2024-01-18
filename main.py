@@ -18,6 +18,7 @@ def main():
     scheduler.schedule(file_job)
     scheduler.schedule(network_job)
     scheduler.run()
+    scheduler.stop()
 
 
 if __name__ == "__main__":
